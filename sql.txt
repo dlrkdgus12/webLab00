@@ -90,10 +90,10 @@ EX4)
 5. select * from students s,department d where s.major='Business Administration' and s.dept_no=d.dept_no;
 
 EX5)
-1. SELECT * FROM students WHERE student_id LIKE "2007%";
+1. SELECT * FROM students WHERE student_id LIKE "%2007%";
 2. SELECT * FROM students ORDER BY student_id;
 3. SELECT major,avg(year) as AVG_year FROM students GROUP BY major HAVING AVG_year>3;
-4. SELECT * FROM students WHERE student_id LIKE "2007%" LIMIT 2;
+4. SELECT * FROM students WHERE student_id LIKE "%2007%" LIMIT 2;
 
 EX6)
 1. SELECT * FROM roles r,movies m WHERE r.movie_id=m.id and m.name="Pi";
@@ -108,11 +108,11 @@ join movies m1 on m1.id = r1.movie_id
 join movies m2 on m2.id = r2.movie_id
 where m1.name = 'Kill Bill: Vol. 1' and m2.name = 'Kill Bill: Vol. 2';
 
-4. SELECT a.*,count(a.id) as COUNT FROM actors a,roles r,movies m WHERE a.id=r.actor_id and r.movie_id=m.id GROUP BY m.name HAVING COUNT ORDER BY COUNT DESC LIMIT 7;
+//4. SELECT a.*,count(a.id) as COUNT FROM actors a,roles r,movies m WHERE a.id=r.actor_id and r.movie_id=m.id GROUP BY m.name HAVING COUNT ORDER BY COUNT DESC LIMIT 7;
 
 5. SELECT genre,count(genre) as count FROM movies_genres GROUP BY genre having count ORDER BY count DESC LIMIT 3;
 
-6. SELECT d.first_name,d.last_name, count(d.id) as count FROM directors d, directors_genres dg WHERE d.id=dg.director_id and dg.genre='Thriller' GROUP BY dg.genre HAVING count ORDER BY count DESC LIMIT 1;
+//6. SELECT d.first_name,d.last_name, count(d.id) as count FROM directors d, directors_genres dg WHERE d.id=dg.director_id and dg.genre='Thriller' GROUP BY dg.genre HAVING count ORDER BY count DESC LIMIT 1;
 
 EX7)
 1. SELECT grade FROM grades g,courses c,students s WHERE  g.student_id=s.id and g.course_id=c.id and c.name='Computer Science 143';
